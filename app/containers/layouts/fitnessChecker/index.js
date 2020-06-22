@@ -36,7 +36,21 @@ class ExerciseWarningScreen extends Component {
                 lineHeight: 35,
               }}
             >
-              1. Cardiovascular disease
+              1. Diabetic retinopathy
+            </Text>
+          </View>
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            <Text
+              style={{
+                color: "#ffffff",
+                fontSize: 14,
+                marginTop: 10,
+                marginLeft: 30,
+                fontWeight: "900",
+                lineHeight: 35,
+              }}
+            >
+              2. Cardiovascular disease
             </Text>
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
@@ -50,7 +64,7 @@ class ExerciseWarningScreen extends Component {
                 fontWeight: "900",
               }}
             >
-              2. Metabolic disease
+              3. Metabolic disease
             </Text>
           </View>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
@@ -64,7 +78,7 @@ class ExerciseWarningScreen extends Component {
                 fontWeight: "900",
               }}
             >
-              2. Renal disease
+              4. Renal disease
             </Text>
           </View>
           <View style={themedStyle.buttonContainer}>

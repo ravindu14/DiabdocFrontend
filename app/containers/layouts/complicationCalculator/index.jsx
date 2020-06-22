@@ -37,8 +37,8 @@ class RiskCalculator extends Component {
       age: parseFloat(age),
       bmi: parseFloat(bmi),
       dia_duration: parseFloat(dia_duration),
-      insulin: parseFloat(insulin),
-      medi_treatment: parseFloat(medi_treatment),
+      insulin: insulin ? 1 : 0,
+      medi_treatment: medi_treatment ? 1 : 0,
       hba1c: parseFloat(hba1c),
     };
 

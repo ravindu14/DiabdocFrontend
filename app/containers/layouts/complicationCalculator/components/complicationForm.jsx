@@ -28,8 +28,8 @@ class ComplicationComponent extends Component {
     age: "",
     bmi: "",
     dia_duration: "",
-    insulin: "",
-    medi_treatment: "",
+    insulin: false,
+    medi_treatment: false,
     hba1c: "",
   };
 
@@ -64,6 +64,13 @@ class ComplicationComponent extends Component {
     });
   };
 
+  onChangeRadioValue = (field) => {
+    this.setState({
+      ...this.state,
+      [field]: !this.state[field],
+    });
+  };
+
   render() {
     const {
       style,
@@ -72,6 +79,7 @@ class ComplicationComponent extends Component {
       complications,
       ...restProps
     } = this.props;
+
     const {
       gender,
       age,
@@ -179,27 +187,11 @@ class ComplicationComponent extends Component {
           />
           <ValidationInput
             style={themedStyle.textInput}
-            label="Diabetes Duration"
+            label="Diabetes Duration(years)"
             validator={WeightValidator}
             value={dia_duration}
             onChangeText={(dia_duration) =>
               this.onChangeFormValue({ dia_duration })
-            }
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="Insulin Treatment"
-            validator={WeightValidator}
-            value={insulin}
-            onChangeText={(insulin) => this.onChangeFormValue({ insulin })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="Medical Treatment"
-            validator={WeightValidator}
-            value={medi_treatment}
-            onChangeText={(medi_treatment) =>
-              this.onChangeFormValue({ medi_treatment })
             }
           />
           <ValidationInput
@@ -209,6 +201,42 @@ class ComplicationComponent extends Component {
             value={hba1c}
             onChangeText={(hba1c) => this.onChangeFormValue({ hba1c })}
           />
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            <Radio
+              checked={insulin}
+              disabled={medi_treatment}
+              onChange={() => this.onChangeRadioValue("insulin")}
+              style={{ marginVertical: 10 }}
+            />
+            <Text
+              style={{
+                color: "#ffffff",
+                fontSize: 14,
+                marginTop: 10,
+                marginLeft: 20,
+              }}
+            >
+              Insulin Treatment
+            </Text>
+          </View>
+          <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+            <Radio
+              disabled={insulin}
+              checked={medi_treatment}
+              onChange={() => this.onChangeRadioValue("medi_treatment")}
+              style={{ marginVertical: 10 }}
+            />
+            <Text
+              style={{
+                color: "#ffffff",
+                fontSize: 14,
+                marginTop: 10,
+                marginLeft: 20,
+              }}
+            >
+              Medical Treatment
+            </Text>
+          </View>
         </View>
       </View>
     );

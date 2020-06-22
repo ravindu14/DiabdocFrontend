@@ -131,9 +131,9 @@ export function userSignUp(payload, riskPayload) {
       .then(({ data }) => {
         let risk =
           data && data.results && data.results.length > 0
-            ? data.results[0].result * 100 > 100.0
+            ? data.results[0].result > 100.0
               ? 100.0
-              : data.results[0].result * 100
+              : data.results[0].result
             : 10.45;
 
         authService
@@ -184,7 +184,7 @@ export function updateUser(payload, riskPayload) {
       .then(({ data }) => {
         let risk =
           data && data.results && data.results.length > 0
-            ? data.results[0].result * 100
+            ? data.results[0].result
             : 10.45;
 
         authService

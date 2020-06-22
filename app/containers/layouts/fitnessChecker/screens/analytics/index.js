@@ -28,7 +28,15 @@ class AnalyticScreen extends Component {
         : [0, 0, 0, 0, 0, 0, 0];
 
     const data = {
-      labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      labels: [
+        `Mon-${dataSet[0]}cal`,
+        `Tue-${dataSet[1]}cal`,
+        `Wed-${dataSet[2]}cal`,
+        `Thu-${dataSet[3]}cal`,
+        `Fri-${dataSet[4]}cal`,
+        `Sat-${dataSet[5]}cal`,
+        `Sun-${dataSet[6]}cal`,
+      ],
       datasets: [
         {
           data: dataSet,
@@ -47,23 +55,44 @@ class AnalyticScreen extends Component {
     return (
       <LinearGradient colors={["#005A00", "#000000"]} style={{ flex: 1 }}>
         <View style={themedStyle.container}>
-          <BarChart
-            style={themedStyle.graphStyle}
-            data={data}
-            width={dimensions}
-            height={290}
-            showBarTops
-            fromZero
-            chartConfig={{
-              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-              style: {
-                borderRadius: 16,
-              },
-              backgroundGradientToOpacity: 0.1,
-              barPercentage: 0.7,
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
-            verticalLabelRotation={30}
-          />
+          >
+            <Text
+              style={{
+                color: "#7be39b",
+                fontSize: 18,
+                marginTop: 10,
+                fontWeight: "bold",
+              }}
+            >
+              Weekly Burnt Calorie Analysis
+            </Text>
+          </View>
+          <View style={{ overflow: "scroll" }}>
+            <BarChart
+              style={themedStyle.graphStyle}
+              data={data}
+              width={dimensions}
+              height={500}
+              showBarTops
+              fromZero
+              chartConfig={{
+                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                style: {
+                  borderRadius: 16,
+                },
+                backgroundGradientToOpacity: 0.1,
+                barPercentage: 0.7,
+              }}
+              verticalLabelRotation={80}
+            />
+          </View>
           {notification !== null && (
             <Alert status={Alert.STATUS.DANGER}>{notification}</Alert>
           )}
@@ -99,7 +128,6 @@ export default withStyles(AnalyticScreenContainer, (theme) => ({
   },
   graphStyle: {
     marginVertical: 100,
-
     borderRadius: 10,
   },
 }));

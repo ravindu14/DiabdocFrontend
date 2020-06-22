@@ -32,12 +32,12 @@ class SignUpComponent extends Component {
     age: "",
     height: "",
     weight: "",
-    sbp: "",
-    dbp: "",
-    chol: "",
-    trigl: "",
-    hdl: "",
-    ldl: "",
+    sbp: "140",
+    dbp: "90",
+    chol: "6.2",
+    trigl: "2.2",
+    hdl: "3.33",
+    ldl: "4.1",
     family: false,
     smoke: false,
     drink: false,
@@ -190,48 +190,6 @@ class SignUpComponent extends Component {
             validator={WeightValidator}
             value={weight}
             onChangeText={(weight) => this.onChangeFormValue({ weight })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="SBP Value (mmHg)"
-            validator={WeightValidator}
-            value={sbp}
-            onChangeText={(sbp) => this.onChangeFormValue({ sbp })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="DBP Value (mmHg)"
-            validator={WeightValidator}
-            value={dbp}
-            onChangeText={(dbp) => this.onChangeFormValue({ dbp })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="Cholesterol (mmol/L)"
-            validator={WeightValidator}
-            value={chol}
-            onChangeText={(chol) => this.onChangeFormValue({ chol })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="Triglyceride (mmol/L)"
-            validator={WeightValidator}
-            value={trigl}
-            onChangeText={(trigl) => this.onChangeFormValue({ trigl })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="HDL Value (mmol/L)"
-            validator={WeightValidator}
-            value={hdl}
-            onChangeText={(hdl) => this.onChangeFormValue({ hdl })}
-          />
-          <ValidationInput
-            style={themedStyle.textInput}
-            label="LDL Value (mmol/L)"
-            validator={WeightValidator}
-            value={ldl}
-            onChangeText={(ldl) => this.onChangeFormValue({ ldl })}
           />
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
             <Radio
