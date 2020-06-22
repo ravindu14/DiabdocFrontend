@@ -61,6 +61,7 @@ class ExerciseWarningScreen extends Component {
                 marginTop: 10,
                 marginBottom: 10,
                 marginLeft: 30,
+                lineHeight: 35,
                 fontWeight: "900",
               }}
             >
@@ -75,6 +76,7 @@ class ExerciseWarningScreen extends Component {
                 marginTop: 10,
                 marginBottom: 10,
                 marginLeft: 30,
+                lineHeight: 35,
                 fontWeight: "900",
               }}
             >

@@ -201,43 +201,43 @@ class LegsWorkoutsScreen extends Component {
 
   getTotalCalories = (day) => {
     const {
-      exercises: { armExercises },
+      exercises: { legExercises },
     } = this.props;
 
     let totalCalories = 0;
 
     if (day === "monday") {
-      armExercises.Monday.map((exercise, index) => {
+      legExercises.Monday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
     } else if (day === "tuesday") {
-      armExercises.Tuesday.map((exercise, index) => {
+      legExercises.Tuesday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
     } else if (day === "wednesday") {
-      armExercises.Wednesday.map((exercise, index) => {
+      legExercises.Wednesday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
     } else if (day === "thursday") {
-      armExercises.Thursday.map((exercise, index) => {
+      legExercises.Thursday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
     } else if (day === "friday") {
-      armExercises.Friday.map((exercise, index) => {
+      legExercises.Friday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
     } else if (day === "saturday") {
-      armExercises.Saturday.map((exercise, index) => {
+      legExercises.Saturday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
     } else if (day === "sunday") {
-      armExercises.Sunday.map((exercise, index) => {
+      legExercises.Sunday.map((exercise, index) => {
         totalCalories += exercise.cal;
         return null;
       });
